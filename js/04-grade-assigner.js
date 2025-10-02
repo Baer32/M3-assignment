@@ -14,7 +14,7 @@ if (grade < 1 || grade > 100 || isNaN(grade)) {
     console.log("Only numbers between 1 and 100 are accepted.");
 }
 else {
-    switch (grade) {
+    switch (Number.isInteger(grade)) {
         case (grade >= 90):
             console.log("You received an A")
             break
