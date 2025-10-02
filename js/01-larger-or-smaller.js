@@ -5,18 +5,22 @@
 
 let intNumOne = parseInt(prompt("Enter the first integer:"));
 let intNumTwo = parseInt(prompt("Enter the second integer:"));
-
 let message;
-switch  (true) {
-    case (intNumOne > intNumTwo):
-        message = `${intNumOne}.`;
-        break;
-    case (intNumTwo > intNumOne):
-        message = `${intNumTwo}.`;
-        break;
-    default:
+
+if (Number.isInt(intNumOne) === true && Number.isInt(intNumTwo) === true) {
+    if (intNumOne > intNumTwo){
+        message = `${intNumOne}`;
+    }
+    else if (intNumTwo > intNumOne){
+        message = `${intNumTwo}`;
+    }
+    else{
         message = "Both numbers are equal.";
-        break;
+    }
+
+}
+else {
+    message = "Invalid input. Please enter valid integers.";
 }
 
 document.write(message)
