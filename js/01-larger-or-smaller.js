@@ -7,17 +7,18 @@ let intNumOne = parseInt(prompt("Enter the first integer:"));
 let intNumTwo = parseInt(prompt("Enter the second integer:"));
 let message;
 
-if (Number.isInt(intNumOne) === true && Number.isInt(intNumTwo) === true) {
-    if (intNumOne > intNumTwo){
-        message = `${intNumOne}`;
+if (Number.isInteger(intNumOne) === true && Number.isInteger(intNumTwo) === true) {    
+    switch  (true) {
+        case (intNumOne > intNumTwo):
+            message = `${intNumOne}`;
+            break;
+        case (intNumTwo > intNumOne):
+            message = `${intNumTwo}`;
+            break;
+        default:
+            message = "Both numbers are equal.";
+            break;
     }
-    else if (intNumTwo > intNumOne){
-        message = `${intNumTwo}`;
-    }
-    else{
-        message = "Both numbers are equal.";
-    }
-
 }
 else {
     message = "Invalid input. Please enter valid integers.";
